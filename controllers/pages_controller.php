@@ -15,6 +15,11 @@
    public function getRestaurant()
      {
         $apiendpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";    
+        $lat =  $_GET['lat'];
+        $lon =  $_GET['lon'];
+        $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s"
+
+        
      }
   }
 ?>
