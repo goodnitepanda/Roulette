@@ -1,36 +1,39 @@
 <?php
-function CallAPI($method, $url, $data = false)
-{
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS)
+public class helperfunctions 
 
-    // switch ($method)
-    // {
-    //     case "GET":
-    //         curl_setopt($curl, CURLOPT_POST, 1);
+    public function CallAPI($url)
+    {
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS)
 
-    //         if ($data)
-    //             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-    //         break;
-    //     case "PUT":
-    //         curl_setopt($curl, CURLOPT_PUT, 1);
-    //         break;
-    //     // default:
-    //     //     if ($data)
-    //     //         $url = sprintf("%s?%s", $url, http_build_query($data));
-    // }
+        // switch ($method)
+        // {
+        //     case "GET":
+        //         curl_setopt($curl, CURLOPT_POST, 1);
 
-    // Optional Authentication:
-    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_USERPWD, "username:password");
+        //         if ($data)
+        //             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        //         break;
+        //     case "PUT":
+        //         curl_setopt($curl, CURLOPT_PUT, 1);
+        //         break;
+        //     // default:
+        //     //     if ($data)
+        //     //         $url = sprintf("%s?%s", $url, http_build_query($data));
+        // }
 
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        // Optional Authentication:
+        // curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        // curl_setopt($curl, CURLOPT_USERPWD, "username:password");
 
-    $result = curl_exec($curl);
+        // curl_setopt($curl, CURLOPT_URL, $url);
+        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-    curl_close($curl);
+        $result = curl_exec($curl);
 
-    return $result;
+        curl_close($curl);
+
+        return $result;
+    }
 }
  ?>

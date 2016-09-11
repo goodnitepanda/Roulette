@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -14,7 +15,7 @@
     </footer>
   <body>
 <html>
-<script>
+<script type="text/javascript">
 
 window.onload = function() {
   var startPos;
@@ -25,5 +26,18 @@ window.onload = function() {
   };
   navigator.geolocation.getCurrentPosition(geoSuccess);
 };
+
+$(document).ready(function(){
+    $("#submitBtn").click(function(e){
+        e.preventDefault();
+        $("#submitBtn").fadeTo("slow", 0);
+        $.ajax({
+            data: {
+              startLat: startPos.coords.latitude
+            }
+        })
+
+    });
+});
 
 </script>

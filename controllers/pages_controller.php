@@ -1,6 +1,7 @@
 <?php
   class PagesController 
   {
+
     public function home() 
       {
         $first_name = 'Jon';
@@ -17,9 +18,12 @@
         $apiendpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";    
         $lat =  $_GET['lat'];
         $lon =  $_GET['lon'];
-        $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s"
+        $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s";
 
-        
+        $constructedURL = $apiendpoint + "location=" + $lat + "," + $lon + "radius=10" + "key=" + $APIkey;
+        $resturantData = callAPI($constructedURL);
+
+        return $resturantData;
      }
   }
 ?>
