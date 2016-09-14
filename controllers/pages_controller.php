@@ -2,15 +2,6 @@
   class PagesController 
   {
 
-    // $action = $_GET['action'];
-
-    // public function routing($action) {
-    //   switch($action) {
-    //         case "getResturant":
-    //             $this->doMethod1();
-    //             break;
-    // }
-
     public function home() 
       {
         $first_name = 'Jon';
@@ -36,7 +27,7 @@
         // catch (Exception $e) {
         //   return $e;
         // }
-        return 'hey';
+        echo "biggggggeeeeeeeeeerrrrrrrr sssssstrrriiinnnnggg toooo seeeee";
       }
   }
 ?>

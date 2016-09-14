@@ -8,7 +8,10 @@
     </header>
 
     <?php require_once('routes.php'); ?>
-    <?php require_once('views/pages/resturantinfo.php'); ?>
+
+
+    <div id="divResults"></div>
+    <button type = 'button' id = "submitBtn">Tell Me What To Eat!</button>
 
     <footer>
       Copyright
@@ -28,28 +31,25 @@ window.onload = function() {
   navigator.geolocation.getCurrentPosition(geoSuccess);
 };
 
-$(document).ready(function(){
-
   $("#submitBtn").click(function(e){
-      e.preventDefault();
       $("#submitBtn").fadeTo("slow", 0);
-
+      e.preventDefault();
       $.ajax({
-        type: "GET",
+        type: "get",
         contenttype: 'text',
         datatype: 'text',
-        data: {controller: 'pages', action: 'getRestaurant' },
+        data: {controller:"pages", action:"getRestaurant"},
         error: function(resp) {
           alert("Please make sure you are sharing your location");
           console.log(resp)
           // a better error handling to be implimented would be to have a
           // message appear on the screen that appears and says please make sure you are sharing your location.            
         },
-        success: function(data) {
-          alert(data);
-          console.log(data);
+        success: function(results) {
+          console.log(results.);
+          alert(results);
+          $("#divResults").empty().append(results);
         }
       })
   });
-});
 </script>

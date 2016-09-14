@@ -1,2 +1,1 @@
-<button type="submit" id = "submitBtn">Tell Me What To Eat!</button>
-
+<button id = "submitBtn">Tell Me What To Eat!</button>
