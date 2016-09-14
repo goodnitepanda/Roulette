@@ -4,7 +4,7 @@ public class helperfunctions
     public function CallAPI($url)
     {
         $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS)
+        curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
 
         // switch ($method)
         // {

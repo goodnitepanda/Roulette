@@ -2,6 +2,15 @@
   class PagesController 
   {
 
+    // $action = $_GET['action'];
+
+    // public function routing($action) {
+    //   switch($action) {
+    //         case "getResturant":
+    //             $this->doMethod1();
+    //             break;
+    // }
+
     public function home() 
       {
         $first_name = 'Jon';
@@ -13,17 +22,21 @@
 
         require_once('views/pages/error.php');
       }
-   public function getRestaurant()
-     {
-        $apiendpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";    
-        $lat =  $_GET['lat'];
-        $lon =  $_GET['lon'];
-        $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s";
+    public function getRestaurant()
+      {
+        // $apiendpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";    
+        // $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s";
 
-        $constructedURL = $apiendpoint + "location=" + $lat + "," + $lon + "radius=10" + "key=" + $APIkey;
-        $resturantData = callAPI($constructedURL);
+        // $constructedURL = $apiendpoint + "location=" + $startLat + "," + $startLon + "&radius=16093.4"+ "&type=restaurant" + "&key=" + $APIkey;
+        // $resturantData = CallAPI($constructedURL);
 
-        return $resturantData;
-     }
+        // try {
+        //  return 'test';
+        // } 
+        // catch (Exception $e) {
+        //   return $e;
+        // }
+        return 'hey';
+      }
   }
 ?>
