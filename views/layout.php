@@ -45,11 +45,14 @@ window.onload = function() {
           // message appear on the screen that appears and says please make sure you are sharing your location.            
         },
         success: function(response) {
-          //console.log(data['message']);
-          var data_array = response;
-          alert(data_array);
-          console.log(response)
-          //$("#divResults").empty().append(data['message']);
+          var data = JSON.parse(response);
+          console.log(JSON.parse(response));
+          date.results[]
+
+        //json data we'll use as some point
+        //alert(json.results[1]['name']);
+        //alert(json.results[0]['photos']['photo_reference']);
+        //alert(json.results[0]['geometry']['location']['lat']);
         }
       });
   });
