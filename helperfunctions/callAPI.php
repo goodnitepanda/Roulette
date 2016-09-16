@@ -1,10 +1,19 @@
 <?php
-public class helperfunctions 
+class helperfunctions {
 
     public function CallAPI($url)
     {
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+        $curl = curl_init();
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($curl, CURLOPT_URL, urlencode($url));
+
+
+        $result = curl_exec($curl);
+
+        curl_close($curl);
 
         // switch ($method)
         // {
@@ -28,10 +37,6 @@ public class helperfunctions
 
         // curl_setopt($curl, CURLOPT_URL, $url);
         // curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-        $result = curl_exec($curl);
-
-        curl_close($curl);
 
         return $result;
     }

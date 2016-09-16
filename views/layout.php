@@ -36,20 +36,21 @@ window.onload = function() {
       e.preventDefault();
       $.ajax({
         type: "get",
-        contenttype: 'text',
-        datatype: 'text',
-        data: {controller:"pages", action:"getRestaurant"},
+        datatype: 'JSON',
+        data: {controller:"pages", action:"getRestaurant", lat: latitude, lon: longitude},
         error: function(resp) {
           alert("Please make sure you are sharing your location");
           console.log(resp)
           // a better error handling to be implimented would be to have a
           // message appear on the screen that appears and says please make sure you are sharing your location.            
         },
-        success: function(results) {
-          console.log(results.);
-          alert(results);
-          $("#divResults").empty().append(results);
+        success: function(response) {
+          //console.log(data['message']);
+          var data_array = response;
+          alert(data_array);
+          console.log(response)
+          //$("#divResults").empty().append(data['message']);
         }
-      })
+      });
   });
 </script>

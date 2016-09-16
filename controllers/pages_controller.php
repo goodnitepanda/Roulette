@@ -1,4 +1,6 @@
 <?php
+  require 'helperfunctions\callAPI.php';
+
   class PagesController 
   {
 
@@ -15,19 +17,17 @@
       }
     public function getRestaurant()
       {
-        // $apiendpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";    
-        // $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s";
+        $apiendpoint = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";    
+        $APIkey = "AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s";
+        $startLat = $_GET['lat'];
+        $startLon = $_GET['lon'];
+        $helper = new helperfunctions;
 
-        // $constructedURL = $apiendpoint + "location=" + $startLat + "," + $startLon + "&radius=16093.4"+ "&type=restaurant" + "&key=" + $APIkey;
-        // $resturantData = CallAPI($constructedURL);
+        $constructedURL = $apiendpoint."location=".$startLat.",".$startLon."&radius=16093.4"."&type=restaurant"."&key=".$APIkey;
+        $resturantData = $helper->CallAPI($constructedURL);
 
-        // try {
-        //  return 'test';
-        // } 
-        // catch (Exception $e) {
-        //   return $e;
-        // }
-        echo "biggggggeeeeeeeeeerrrrrrrr sssssstrrriiinnnnggg toooo seeeee";
+        //$testvar = 'chhhheeeeese';
+        echo json_encode($resturantData);
       }
-  }
+  }    
 ?>
