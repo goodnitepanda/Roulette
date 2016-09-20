@@ -9,9 +9,7 @@
 
     <?php require_once('routes.php'); ?>
 
-
-    <div id="divResults"></div>
-    <button type = 'button' id = "submitBtn">Tell Me What To Eat!</button>
+    <?php require_once('\views\pages\resturantinfo.php'); ?>
 
     <footer>
       Copyright
@@ -23,14 +21,14 @@
 var latitude;
 var longitude;
 
-// function countResults(data){
-//   var resturants = 0;
-//   for (resturants ; (data.results[resturants] != null ? true : false ); resturants++)
-//   {
-//     console.log(results.results[resturants]);
-//     return resturants;
-//   }
-// }
+function countResults(data){
+  var resturants = 0;
+  for (resturants ; (data.results[resturants] != null); resturants++)
+  {
+
+  }
+  return resturants;
+}
 
 window.onload = function() {
   var geoSuccess = function(position) {
@@ -40,12 +38,13 @@ window.onload = function() {
   navigator.geolocation.getCurrentPosition(geoSuccess);
 };
 
+ $(document).ready(function() {
   $("#submitBtn").click(function(e){
       $("#submitBtn").fadeTo("slow", 0);
       e.preventDefault();
       $.ajax({
         type: "get",
-        datatype: 'JSON',
+        dataType: 'json',
         data: {controller:"pages", action:"getRestaurant", lat: latitude, lon: longitude},
         error: function(resp) {
           alert("Please make sure you are sharing your location");
@@ -54,14 +53,12 @@ window.onload = function() {
           // message appear on the screen that appears and says please make sure you are sharing your location.            
         },
         success: function(response) {
-          var data = JSON.parse(response);
-          console.log(data.results[0]['name']);
-          //console.log(data.results[1]['name']);
-          //var resultNumber = countResults(data);
-          //console.log(data.results[0]['name']);
-          //console.log(resultNumber);
 
-        //data.results[]
+          var data = jQuery.parseJSON(response);
+          var resturantcount = Math.floor((Math.random() * countResults(data)) + 1);
+          $('#resturantinfo').text(data.results[resturantcount]['name']);
+          console.log(resturantcount);
+          console.log(data.results[resturantcount]['name']);
 
         //json data we'll use as some point
         //alert(json.results[1]['name']);
@@ -70,4 +67,5 @@ window.onload = function() {
         }
       });
   });
+ });
 </script>
