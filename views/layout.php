@@ -23,6 +23,15 @@
 var latitude;
 var longitude;
 
+// function countResults(data){
+//   var resturants = 0;
+//   for (resturants ; (data.results[resturants] != null ? true : false ); resturants++)
+//   {
+//     console.log(results.results[resturants]);
+//     return resturants;
+//   }
+// }
+
 window.onload = function() {
   var geoSuccess = function(position) {
     latitude = position.coords.latitude;
@@ -46,8 +55,13 @@ window.onload = function() {
         },
         success: function(response) {
           var data = JSON.parse(response);
-          console.log(JSON.parse(response));
-          date.results[]
+          console.log(data.results[0]['name']);
+          //console.log(data.results[1]['name']);
+          //var resultNumber = countResults(data);
+          //console.log(data.results[0]['name']);
+          //console.log(resultNumber);
+
+        //data.results[]
 
         //json data we'll use as some point
         //alert(json.results[1]['name']);
