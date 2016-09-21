@@ -10,6 +10,19 @@ function countResults(data){
   return resturants;
 }
 
+function myMap(maplat,maplon,bizname) {
+  var myCenter = new google.maps.LatLng(maplat,maplon);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 13};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  var infowindow = new google.maps.InfoWindow({
+    content: bizname
+    });
+  infowindow.open(map,marker);
+}
+
 window.onload = function() {
   var geoSuccess = function(position) {
     latitude = position.coords.latitude;
@@ -20,25 +33,34 @@ window.onload = function() {
 
  $(document).ready(function() {
   $("#submitBtn").click(function(e){
-      $("#submitBtn").fadeTo("slow", 0);
       e.preventDefault();
+
       $.ajax({
         type: "get",
         dataType: 'json',
         data: {controller:"pages", action:"getRestaurant", lat: latitude, lon: longitude},
-        error: function(resp) {
+        error: function(response) {
+          $("#submitBtn").fadeTo("slow", 0);
           alert("Please make sure you are sharing your location");
-          console.log(resp)
+          console.log(response)
           // a better error handling to be implimented would be to have a
-          // message appear on the screen that appears and says please make sure you are sharing your location.            
+          // message appear on the screen that appears and says please make sure you are sharing your location.
         },
         success: function(response) {
-
+          $('#map').width("50%").height(300);
+          $('#submitBtn').text("Yeh nah, try something else");
           var data = jQuery.parseJSON(response);
           var resturantcount = Math.floor((Math.random() * countResults(data)) + 1);
-          $('#resturantinfo').text(data.results[resturantcount]['name']);
+          var maplat = data.results[resturantcount]['geometry']['location']['lat'];
+          var maplon = data.results[resturantcount]['geometry']['location']['lng'];
+          var bizname = data.results[resturantcount]['name'];
+          var restmap = myMap(maplat,maplon,bizname);
+          $('#resturantinfo').text(bizname);
+          $('#map').append(restmap);
           console.log(resturantcount);
-          console.log(data.results[resturantcount]['name']);
+          console.log(bizname);
+          console.log(maplat);
+          console.log(maplon);
 
         //json data we'll use as some point
         //alert(json.results[1]['name']);

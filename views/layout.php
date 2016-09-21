@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s&callback=myMap"></script>
   </head>
   <body>
     <header class="w3-container w3-theme w3-padding" id="myHeader">
@@ -33,6 +34,12 @@
     </div>
     <p>Created by Will Hamann and Jake Davis</p>
     </footer>
+<<<<<<< HEAD
   </body>
 </html>
 <script src='./jscript/layout.js' type="text/javascript"></script>
+=======
+  <body>
+<html>
+<script src='./jscript/layout.js' type="text/javascript"></script>
+>>>>>>> origin/dev
