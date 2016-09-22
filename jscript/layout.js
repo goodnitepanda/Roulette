@@ -47,7 +47,7 @@ window.onload = function() {
           // message appear on the screen that appears and says please make sure you are sharing your location.
         },
         success: function(response) {
-          $('#map').width("50%").height(300);
+          $('#map').width("100%").height(300);
           $('#submitBtn').text("Yeh nah, try something else");
           var data = jQuery.parseJSON(response);
           var resturantcount = Math.floor((Math.random() * countResults(data)) + 1);

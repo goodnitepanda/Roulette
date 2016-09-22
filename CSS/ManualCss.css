@@ -1,0 +1,22 @@
+.subheading{
+	font-size:300% !important;
+}
+
+.jumbotron {
+	color: white !important;
+	background-color: black !important;
+	box-shadow: 0 10px 10px grey;
+}
+.content {
+}
+
+footer{
+	background-color: black !important;
+	color: white !important;
+	height: 60px !important;
+	position:absolute;
+  	bottom:0;
+  	width: 100%;
+  	box-shadow: 0 -10px 10px grey;
+  	z-index: 1
+}

@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html>
 <title>Where to Resturant</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s&callback=myMap"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- manualcss changes -->
+     <link rel="stylesheet" href="css/manualcss.css">  
   </head>
   <body>
-    <header class="w3-container w3-theme w3-padding" id="myHeader">
-    <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-opennav"></i>
-    <div class="w3-center">
-    <h4>WHERE TO RESTURANT</h4>
-    <h1 class="w3-xxxlarge w3-animate-bottom">End the Hunger</h1>
-      <div class="w3-padding-32">
-        <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">LEARN W3.CSS</button>
-      </div>
+    <header>
+    <div class="jumbotron" style = "text-align:center">
+    <h1>Where to Resturant</h1>
+    <p class = "subheading">End the Hunger</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button" id = "submitBtn">Tell Me What To Eat!</a></p>
     </div>
     </header>
     <?php require_once('routes.php'); ?>
 
     <?php require_once('\views\pages\resturantinfo.php'); ?>
-
-    <footer class="w3-container w3-theme-dark w3-padding-16">
-    <h3>Credits</h3>
-    <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-      <span class="w3-text w3-theme-light w3-padding">Go To Top</span> 
-      <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
-      <i class="fa fa-chevron-circle-up"></i></span></a>
-    </div>
-    <p>Created by Will Hamann and Jake Davis</p>
+    <div class="content"></div>
+    <footer>
+      <div id = "footer" class="footer">
+        <div class="container">
+          <p class="muted credit">Created by Will Hamann and Jake Davis.</p>
+        </div>
+      </div>
     </footer>
-<<<<<<< HEAD
   </body>
 </html>
 <script src='./jscript/layout.js' type="text/javascript"></script>
-=======
-  <body>
-<html>
-<script src='./jscript/layout.js' type="text/javascript"></script>
->>>>>>> origin/dev
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s&callback=myMap"></script>
