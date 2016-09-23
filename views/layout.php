@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <title>Where to Resturant</title>
   <head>
@@ -22,8 +21,7 @@
     </header>
     <?php require_once('routes.php'); ?>
 
-    <?php require_once('\views\pages\resturantinfo.php'); ?>
-    <div class="content"></div>
+    <div class="content"><?php require_once('\views\pages\resturantinfo.php'); ?> </div>
     <footer>
       <div id = "footer" class="footer">
         <div class="container">
