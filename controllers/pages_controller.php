@@ -24,5 +24,15 @@
 
         echo json_encode($resturantData);
       }
+      public function getPlaceDetails()
+      {
+        $placeid = $_GET['placeid'];
+        $apiendpoint = "https://maps.googleapis.com/maps/api/place/details/json?placeid=".$placeid."&key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s";
+        $helper = new helperfunctions;
+
+        $placeData = $helper->CallAPI($apiendpoint);
+
+        echo json_encode($placeData);
+      }
   }
 ?>

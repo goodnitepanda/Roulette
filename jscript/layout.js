@@ -18,7 +18,7 @@ function myMap(maplat,maplon,bizname) {
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
   var infowindow = new google.maps.InfoWindow({
-    content: bizname
+    content: bizname+'<img src="https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png">'
     });
   infowindow.open(map,marker);
 }
@@ -56,18 +56,29 @@ window.onload = function() {
           var maplat = data.results[resturantcount]['geometry']['location']['lat'];
           var maplon = data.results[resturantcount]['geometry']['location']['lng'];
           var bizname = data.results[resturantcount]['name'];
+          var type1 = data.results[resturantcount]['types']['0'];
+          var type2 = data.results[resturantcount]['types']['1'];
+          var isitopen = data.results[resturantcount]['opening_hours']['open_now'];
+          var opennow = isitopen ? 'Ya! Go there!':'No, dang :(';
+          var address = data.results[resturantcount]['vicinity'];
+          var pricelevel = data.results[resturantcount]['price_level'];
+          var price = pricelevel ? pricelevel+"/5":'no rating';
+          var ratinglevel = data.results[resturantcount]['rating'];
+          var rating = ratinglevel ? ratinglevel+"/5":'no rating';
           var restmap = myMap(maplat,maplon,bizname);
+          // the begnning of the places detail api callAPI
+          var placeid = data.results[resturantcount]['place_id'];
+          console.log(placeid);
+          getDetails(placeid)
           $('#resturantinfo').text(bizname);
           $('#map').append(restmap);
-          console.log(resturantcount);
-          console.log(bizname);
-          console.log(maplat);
-          console.log(maplon);
+          $('#types').text(type1+", "+type2);
+          $('#opennow').text(opennow);
+          $('#address').text(address);
+          $('#price').text(price);
+          $('#rating').text(rating);
+          //console.log(data);
 
-        //json data we'll use as some point
-        //alert(json.results[1]['name']);
-        //alert(json.results[0]['photos']['photo_reference']);
-        //alert(json.results[0]['geometry']['location']['lat']);
         }
       });
   });

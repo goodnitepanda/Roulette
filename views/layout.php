@@ -9,7 +9,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- manualcss changes -->
-     <link rel="stylesheet" href="css/manualcss.css">  
+     <link rel="stylesheet" href="css/manualcss.css">
   </head>
   <body>
     <header>
@@ -32,4 +32,5 @@
   </body>
 </html>
 <script src='./jscript/layout.js' type="text/javascript"></script>
+<script src='./jscript/apicalls.js' type="text/javascript"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s&callback=myMap"></script>
