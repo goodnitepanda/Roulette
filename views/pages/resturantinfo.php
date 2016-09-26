@@ -5,6 +5,7 @@
     </div>
     </div>
   </div>
+
   <div class="panel panel-default resturantinfobox" >
     <div class="panel-body">
     	<ul class="list-group">
@@ -14,12 +15,8 @@
       <li class="list-group-item" id="address">Address:</li>
       <li class="list-group-item" id="price">Pricey:</li>
       <li class="list-group-item" id="rating">Rating:</li>
+      <li class="list-group-item" id="rating">Rating:</li>
     </ul>
     </div>
   </div>
 </div>
-
-<!-- <button id = "submitBtn">Tell Me What To Eat!</button> -->
-
-
-<!-- <button id = "submitBtn">Tell Me What To Eat!</button> -->

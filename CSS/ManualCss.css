@@ -27,11 +27,14 @@ footer{
   	z-index: 1;
   	position: fixed;
 }
+.mapbox{
+}
+
 .panel{
 	width: 46%;
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-	height: 330px;
 	z-index: 2;
+	height: 330px;
 }
 .resturantinfobox{
 	float: right;
@@ -45,21 +48,7 @@ footer{
 	margin-right: 15px;
 	z-index: 2;
 }
-body{
+
+html{
 	overflow: hidden;
-}
-
-.onloadrestinfo{
-
-}
-
-.onloadmapbox{
-
-}
-.wrapper{
-	
-}
-
-img{
-
 }
