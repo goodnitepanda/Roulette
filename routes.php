@@ -16,7 +16,7 @@ function call($controller, $action) {
 
 // just a list of the controllers we have and their actions
 // we consider those "allowed" values
-$controllers = array('pages' => ['home', 'error', 'getRestaurant', 'getPlaceDetails', 'getPhoto']);
+$controllers = array('pages' => ['home', 'error', 'getRestaurant', 'getPlaceDetails']);
 
 // check that the requested controller and action are both allowed
 // if someone tries to access something else he will be redirected to the error action of the pages controller
