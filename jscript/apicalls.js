@@ -22,9 +22,7 @@ function winnerWinnerChickenDinner(){
       var bizname = data.results[resturantcount]['name'];
 
       // ****Bill - I can't figure out how to parse the "photo_reference" bc it's in a "photos" array with [] instead of curly {} so I've left this hardcoded
-      var photoID = "CoQBdwAAAFBxz7xugIlHLXv-MclA8Doa7tRZt1DAIozhKGC6EzhBDlKDFfKGUfZ_GALsMYbcQphqPLx0dw1AcY5oyOwQezKvl3ySwZLY44Ujeli9SNON3A7XlVtjwGohOxLWHafGFqpwerP1Ejgh2rUTQKpA1Ym1jl1fFV2VUrZYPK6xDcsKEhAlmCbvrU2blheWMw7hrk-pGhQ44-fSpnFDeap_7Irjskq14QORcg";
-      var photoURL = '<img src="https://maps.googleapis.com/maps/api/place/photo?photoreference='+photoID+'&sensor=false&maxheight=50&maxwidth=50&key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s">';
-      var restmap = myMap(maplat,maplon,bizname,photoURL);
+      var restmap = myMap(maplat,maplon);
 
       // display the results on the restaurantinfo.php
       $('#resturantinfo').text(bizname);
@@ -60,16 +58,20 @@ $.ajax({
     var rating = ratinglevel ? ratinglevel+" out of 5":"We got nothing. Maybe you should go and check it out though!";
     var website = json.result['website'];
 
+    var photoID = json.result.photos[0]['photo_reference']
+    console.log(photoID);
+    var photoURL = 'https://maps.googleapis.com/maps/api/place/photo?&maxheight=255&photoreference='+photoID+'&key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s';
+    $('.bizimg').attr("src", photoURL);
+
     // display the results on the restaurantinfo.php
     $('#address').text(address);
-    $('#phone').text(phone);
-    //$('.hours').text("hours");
+    $('#phone').html('<span class="glyphicon-earphone glyphicon"></span>Phone: ' + phone);
 
     assignHours(json);
 
-    $('#price').text("Price Level: "+price);
-    $('#rating').text("Overall Rating: "+rating);
-    $('#website').text(website);
+    $('#price').html('<span class="glyphicon-usd glyphicon"></span>Price: '+price);
+    $('#rating').html('<span class="glyphicon-star glyphicon"></span>Rating: ' + rating);
+    $('a').attr("href", website); 
 
     console.log(json);
   }

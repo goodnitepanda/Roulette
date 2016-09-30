@@ -27,10 +27,11 @@ window.onload = function() {
   });
  });
 
- $('#hoursbtn').click(function(){
-  $('.expand').toggle();
-  $('.expand').animate({opacity: '1'}, 'slow');
- });
+$('#hoursbtn').click(function(){
+ $('.expand').slideToggle();
+})
+
+$('.carousel').carousel()
 
 
 

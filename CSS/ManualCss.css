@@ -27,7 +27,9 @@ footer{
   	z-index: 1;
   	position: fixed;
 }
-.mapbox{
+#restpanel{
+	min-width: 45%;
+	display: inline-block;
 }
 
 .panel{
@@ -65,5 +67,23 @@ td{
 
 .expand{
 	display: none;
-	opacity: 0;
+}
+
+.glyphicon{
+	margin-right: 7px
+}
+
+/*.carousel.slide{
+	min-width: 45%;
+	min-height: 30%;
+	float:right;
+	margin: 40px 15px 0px 0px;
+}*/
+.bizimg{
+	max-width: 40%;
+	height: auto;
+	display: block;
+	min-height: 30%;
+	float:right;
+	margin: 60px 15px 0px 0px;
 }
