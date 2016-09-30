@@ -41,6 +41,9 @@ footer{
 	margin: 30px;
 	margin-left: 15px;
 	z-index: 2;
+	min-height: 330px;
+	height: auto;
+	overflow: auto;
 }
 .mapbox{
 	float: left;
@@ -50,5 +53,17 @@ footer{
 }
 
 html{
-	overflow: hidden;
+	overflow: scroll;
+}
+
+.label-default{
+	background-color: #265a88 !important;
+}
+td{
+	font-size: 14px !important;
+}
+
+.expand{
+	display: none;
+	opacity: 0;
 }

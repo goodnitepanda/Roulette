@@ -10,20 +10,6 @@ function countResults(data){
   return resturants;
 }
 
-function myMap(maplat,maplon,bizname,photoURL) {
-  var myCenter = new google.maps.LatLng(maplat,maplon);
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 13};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  var photoID = "";
-  marker.setMap(map);
-  var infowindow = new google.maps.InfoWindow({
-    content: bizname+photoURL
-    });
-  infowindow.open(map,marker);
-}
-
 window.onload = function() {
   var geoSuccess = function(position) {
     latitude = position.coords.latitude;
@@ -40,4 +26,11 @@ window.onload = function() {
       winnerWinnerChickenDinner();
   });
  });
+
+ $('#hoursbtn').click(function(){
+  $('.expand').toggle();
+  $('.expand').animate({opacity: '1'}, 'slow');
+ });
+
+
 

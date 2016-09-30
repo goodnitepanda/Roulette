@@ -33,4 +33,5 @@
 </html>
 <script src='./jscript/layout.js' type="text/javascript"></script>
 <script src='./jscript/apicalls.js' type="text/javascript"></script>
+<script src='./jscript/helperfunctions.js' type="text/javascript"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s&callback=myMap"></script>
