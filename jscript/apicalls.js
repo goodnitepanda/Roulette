@@ -58,10 +58,11 @@ $.ajax({
     var rating = ratinglevel ? ratinglevel+" out of 5":"We got nothing. Maybe you should go and check it out though!";
     var website = json.result['website'];
 
-    var photoID = json.result.photos[0]['photo_reference']
-    console.log(photoID);
-    var photoURL = 'https://maps.googleapis.com/maps/api/place/photo?&maxheight=255&photoreference='+photoID+'&key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s';
-    $('.bizimg').attr("src", photoURL);
+    // var photoID = json.result.photos[0]['photo_reference']
+    // console.log(photoID);
+    // var photoURL = 'https://maps.googleapis.com/maps/api/place/photo?&maxheight=255&photoreference='+photoID+'&key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s';
+    // $('.bizimg').attr("src", photoURL);
+    assignPhotos(json);
 
     // display the results on the restaurantinfo.php
     $('#address').text(address);

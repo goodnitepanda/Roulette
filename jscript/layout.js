@@ -27,11 +27,18 @@ window.onload = function() {
   });
  });
 
+$("#submitBtn").click(function(e){
+   e.preventDefault();
+    $('#onload').hide('fast');
+    $('#buttonclick').show('slow')
+    $('#onload1').hide('fast');
+    $('#buttonclick1').show('slow')
+})
+
 $('#hoursbtn').click(function(){
  $('.expand').slideToggle();
 })
 
-$('.carousel').carousel()
-
+//$('.carousel').carousel()
 
 
