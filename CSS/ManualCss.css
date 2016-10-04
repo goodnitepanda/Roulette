@@ -15,7 +15,6 @@
 	min-width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	background-repeat: no-repeat;
 }
 
 footer{
@@ -56,7 +55,7 @@ footer{
 }
 
 html{
-	overflow: scroll;
+	overflow: hidden;
 }
 
 .label-default{
@@ -110,7 +109,8 @@ td{
 	display: none;
 }
 .imagecontainer img {
-	width: 100%;
+	min-width: 300px;
+	max-height: 230px;
   	height: auto;
 }
 

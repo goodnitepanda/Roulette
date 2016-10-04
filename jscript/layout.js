@@ -1,5 +1,7 @@
 var latitude;
 var longitude;
+var currentIndex = 0;
+
 
 function countResults(data){
   var resturants = 0;
@@ -39,6 +41,21 @@ $('#hoursbtn').click(function(){
  $('.expand').slideToggle();
 })
 
-//$('.carousel').carousel()
+function cycleItems() {
+  var item = $('.imagecontainer div').eq(currentIndex);
+  items.hide();
+  item.css('display','inline-block');
+}
+
+$('.imagecontainer').click(function() {
+
+  items = $('.imagecontainer div'), itemAmt = items.length;
+
+  currentIndex ++;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+});
 
 

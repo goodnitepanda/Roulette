@@ -45,16 +45,13 @@
           <table cellpadding="100">
           <tr>
           <td>
-          <!--facebook share-->
             <div class="fb-share-button" data-href="http://google.com" data-layout="icon" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgoogle.com%2F&amp;src=sdkpreparse"></a></div>
           </td>
           <td>
-          <!--google share-->
           <a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
           <img src="https://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/></a>
           </td>
           <td>
-          <!--twitter share-->
           <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           </td>
           </tr>

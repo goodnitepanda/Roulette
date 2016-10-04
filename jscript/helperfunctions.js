@@ -1,25 +1,3 @@
-var currentIndex, items, itemAmt;
-
-function cycleItems() {
-  var item = $('.imagecontainer div').eq(currentIndex);
-  items.hide();
-  item.css('display','inline-block');
-}
-
-$('.imagecontainer').click(function() {
-	currentIndex = 0,
-	items = $('.imagecontainer div'),
-	itemAmt = items.length;
-
-  currentIndex += 1;
-  if (currentIndex > itemAmt - 1) {
-    currentIndex = 0;
-  }
-  cycleItems();
-});
-
-
-
 function countResults(data){
   var resturants = 0;
   for (resturants ; (data.results[resturants] != null); resturants++)
@@ -53,6 +31,5 @@ function assignPhotos(data){
 			+ data.result.photos[i]['photo_reference']  + '&key=AIzaSyA30yhaBrGHSuhrdyBsy9wuLIDoYO6qv0s"> </div>';
 		}
 	}
-	console.log(images);
 	$(".imagecontainer").html(images);
 }
